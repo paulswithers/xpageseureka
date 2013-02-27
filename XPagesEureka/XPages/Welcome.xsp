@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:dojoModule name="extlib.dijit.Loading"></xp:dojoModule>
+	</xp:this.resources>
+
+	<xc:appLayout width="350px">
+		<xp:this.facets>
+			<xp:div xp:key="facet_1" style="text-align:center;">
+				<!-- Images -->
+				<xp:image url="intec-logo-medium1.gif" id="image1"
+					style="float:left">
+				</xp:image>
+				<xp:image url="/uklug.gif" id="image3"></xp:image>
+				<xp:image url="/gbs-Logo-2.gif" id="image2"
+					style="float:right">
+				</xp:image>
+				<!-- Title -->
+				<xp:text escape="true" id="computedField1"
+					value="Welcome" tagName="h1"
+					style="clear:left;">
+				</xp:text>
+				<br />
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[Use the <b>Load Users</b> button to create a dataset of 50,000 users.
+<br/><br/> The <b>sessionScope</b> page shows the relationship between sessionScoped variables, 
+the NSF and the Domino HTTP server.
+<br/>The <b>Java Performance</b> section shows the difference in performance between splitting data 
+over multiple controls or combining it into a single control. It also shows the relative performance 
+hit of SSJS. Run the pages with FireBug and look at the Net panel to see the difference in waiting 
+(the time the server takes to process the data) and receiving (the time the browser takes to load 
+the data) times. A large dataset has been used to emphasise the impact and highlight how developers 
+can code to minimise the impact of server performance or network latency.
+<br/>The <b>JSF Lifecycle</b> section shows the impact of Validation on onChange and other server-side 
+events, and how partial refresh settings impact what occurs when the event is triggered. The pages 
+show the benefit of some of the partial refresh settings when handling validation and also when 
+getSubmittedValue() and getValue() should be used. Refer to the server console during these tests.
+<br/>The <b>JSF Lifecycle Extended</b> section shows the impact of computing values in different 
+ways and the impact of different partial refresh options on Compute Dynamically. This highlights 
+the benefits of using Compute On Page Load where possible, the benefits of dataContexts for 
+dynamically loaded content, and the difference between Partial Refresh and Partial Execution. 
+Refer to the server console during these tests.
+<br/>The <b>Bonus</b> section shows some bonus content apposite to the topic but beyond the scope
+of the presentation. Refer to the server console during the JSF lifecycle tests.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+				<div id="loading"></div>
+				<xp:button style="margin:20px 0;" value="Load Users"
+					id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var d = new extlib.DataInitializer();
+d.initDeleteDocuments();
+d.initUsers(50000);
+d.run();
+@InfoMessage("Created users","button1");}]]></xp:this.action>
+						<xp:this.script><![CDATA[XSP.animateLoading('loading')]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:button>
+				<br />
+				<xp:message id="message1" for="button1"></xp:message>
+			</xp:div>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

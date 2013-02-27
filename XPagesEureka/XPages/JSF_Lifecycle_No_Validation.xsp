@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[This form has a required field (Name) and a number
+field (Age). These highlight the impact of converters and validators. An onChange event is attached
+to the comboBox to change the label for the final field, set to immediate="true".
+<br/>1. Change the comboBox value. Note that validation does not trigger and the label for the final 
+field changes. Note the SSJS on the onChange event is triggered. Review the phases processed on 
+server console. Note the submittedValue and Value properties returned.
+<br/>2. Put "ten" in the Age field. Change the comboBox value. Note that the converter
+triggers. Review the phases processed on the server console. No Validation option (immediate="true") 
+still honours conversion and still pushes values from submittedValue to value.
+<br/>3. Enter valid Age but leave Name blank, and change the comboBox value. Review the phases processed on the server 
+console. Note the SSJS on the onChange event is triggered. Note the validation is skipped. Note the
+Computed Field, which uses the values stored in the NotesXSPDocument via the values property,
+is updated.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:this.data>
+					<xp:dominoDocument var="document1" formName="sampleData"></xp:dominoDocument>
+				</xp:this.data>
+
+				<xp:label value="Name" id="label1" for="input1"></xp:label>
+
+				<xp:inputText id="input1" value="#{document1.Name}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Enter your name"></xp:validateRequired>
+					</xp:this.validators>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:label value="Age" id="label2" for="input2"></xp:label>
+
+				<xp:inputText id="input2" value="#{document1.Age}">
+					<xp:this.converter>
+						<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:label value="Country" id="label3" for="input2"></xp:label>
+
+				<xp:comboBox id="combo1" value="#{document1.Country}">
+					<xp:selectItem itemLabel="--Please Select--" itemValue=""></xp:selectItem>
+					<xp:selectItem itemLabel="Denmark" itemValue="DK"></xp:selectItem>
+					<xp:selectItem itemLabel="UK" itemValue="UK"></xp:selectItem>
+					<xp:selectItem itemLabel="USA" itemValue="US"></xp:selectItem>
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial"
+						refreshId="panel1" disableValidators="true">
+						<xp:this.action><![CDATA[#{javascript:print ("change triggered");
+print("Submitted Value: " + this.getParent().getSubmittedValue());
+print("Value: " + this.getParent().getValue());}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:comboBox>
+
+				<xp:br></xp:br>
+
+				<xp:label id="label4" for="input3">
+					<xp:this.value><![CDATA[#{javascript:switch (document1.getItemValueString("Country")) {
+	case "DK":
+		return "Postal Code";
+	case "UK":
+		return "PostCode";
+	case "US":
+		return "Zip Code";
+	default:
+		return "PostCode / Postal Code / Zip Code";
+}}]]></xp:this.value>
+				</xp:label>
+
+				<xp:inputText id="input3" value="#{document1.ZIP}"></xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:messages id="messages1"></xp:messages>
+
+				<xp:br></xp:br>
+
+				<xp:button value="Save" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:document1.save();}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				
+				<xp:br></xp:br>
+				
+				<xp:text value="Name is #{document1.Name}, age is #{document1.Age}"></xp:text>
+				<xp:br></xp:br>
+				<xp:br></xp:br><xp:image url="/Lifecycle+No+Validation.gif" id="image1"></xp:image></xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- The rendered property is calculated in a dataContext. This is a global variable available
+	anywhere within its container (this.dataContexts is a child of xp:view on this occasion, so
+	it's visible within this XPage or any custom control within this XPage).
+	
+	We already know from JSF_Lifecycle_Language_DataContext that the dataContext is calculated less
+	often during the partial refresh JSF lifecycle. So in theory (and practice), using a dataContext
+	should perform better during a partial refresh of the page.
+	
+	And because the reference to the dataContext is in EL rather than SSJS, that also performs better -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+
+	<xp:this.dataContexts>
+		<xp:dataContext var="showRow" value="#{javascript:return true;}"></xp:dataContext>
+	</xp:this.dataContexts>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:button value="Partially refresh" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1">
+					</xp:eventHandler>
+				</xp:button>
+				<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+					value="#{view1}">
+					<xp:text
+						value="Entry number #{count} is #{user.FirstName} #{user.LastName} 
+						whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}"
+						rendered="#{showRow}">
+					</xp:text>
+					<br />
+				</xp:repeat>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2de" sequence="2" unid="0A679093A6199E2E80257A6E00820040">
+<created><datetime dst="true">20120904T003957,44+01</datetime></created>
+<modified><datetime>20121218T112353,20+00</datetime></modified>
+<revised><datetime>20121218T112353,19+00</datetime></revised>
+<lastaccessed><datetime>20121218T112353,20+00</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120904T003957,46+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
+<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
+<item name="$TITLE"><text>Lifecycle Custom Validator Java.gif</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20120904T003947,00+01</datetime></item>
+<item name="$ImageNames" sign="true"><text>Lifecycle Custom Validator Java.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[This page has two repeat controls.<br/>
+<ul><li>The first repeat has a Computed Field control whose value is coded in the XPage. It works.</li>
+<li>The second repeat has a Computed Field control whose value is set in a theme. It doesn't.</li></ul>
+It fails because the value needs to be available when the repeat is built, during the page load 
+event. The theme is not applied until the render response phase.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:text value="This one works - it's set in XPage design"></xp:text>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				
+				<xp:repeat id="repeat2" rows="5" indexVar="count" var="user"
+					value="#{view1}">
+					<xp:text
+						value="Entry number #{count} is #{user.FirstName} #{user.LastName} 
+				whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}"></xp:text>
+					<br />
+				</xp:repeat>
+				<xp:br></xp:br>
+				
+				<xp:text value="This one doesn't - value is set in theme, but needs to be available earlier in the lifecycle process"></xp:text>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				
+				<xp:repeat id="repeat1" rows="5" indexVar="count" var="user"
+					value="#{view1}">
+					<xp:text value="" themeId="RepeatText.Value"></xp:text>
+					<br />
+				</xp:repeat>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

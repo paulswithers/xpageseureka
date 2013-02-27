@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+
+				<xp:this.data>
+					<xp:dominoDocument var="document1" formName="sampleData"></xp:dominoDocument>
+				</xp:this.data>
+				
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[This page was developed to provide an answer for a customer on our Mentoring Package.
+	See http://www.intec.co.uk for more information.
+	<br/><br/>
+	The issue was that a Check Values button was shown until all fields passed validation.
+	But if an invalid value was entered, the buttons did not switch back, because validation
+	failed.
+	<br/><br/>
+	From what we have now understood about the JSF lifecycle, that makes sense.
+	<br/><br/>
+	There is a facesContext.getMessages() iterator that has all XPage error messages. So we check
+	the hasNext() method to see if there is an error. If conversion / validation has failed at any 
+	time, the JSF lifecycle skips from Process Validation to Render Response, but facesContext has
+	error messages passed to it.
+	<br/><br/>
+	The other part of the if statement checks one of the required fields is not null or blank.
+	This addresses the fact there are no error messages when the page is first loaded.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:label value="Name" id="label1" for="input1"></xp:label>
+
+				<xp:inputText id="input1" value="#{document1.Name}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Enter your name"></xp:validateRequired>
+					</xp:this.validators>
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial"
+						refreshId="panel1">
+						<xp:this.action><![CDATA[#{javascript:print ("change triggered");
+print("Submitted Value: " + this.getParent().getSubmittedValue());
+print("Value: " + this.getParent().getValue());}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:label value="Age" id="label2" for="input2"></xp:label>
+
+				<xp:inputText id="input2" value="#{document1.Age}">
+					<xp:this.converter>
+						<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber>
+					</xp:this.converter>
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial"
+						refreshId="panel1">
+						<xp:this.action><![CDATA[#{javascript:print ("change triggered");
+print("Submitted Value: " + this.getParent().getSubmittedValue());
+print("Value: " + this.getParent().getValue());}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:label value="Country" id="label3" for="input2"></xp:label>
+
+				<xp:comboBox id="combo1" value="#{document1.Country}">
+					<xp:selectItem itemLabel="--Please Select--" itemValue=""></xp:selectItem>
+					<xp:selectItem itemLabel="Belgium" itemValue="BE"></xp:selectItem>
+					<xp:selectItem itemLabel="UK" itemValue="UK"></xp:selectItem>
+					<xp:selectItem itemLabel="USA" itemValue="US"></xp:selectItem>
+					<xp:eventHandler event="onchange" submit="true" refreshMode="partial"
+						refreshId="panel1">
+						<xp:this.action><![CDATA[#{javascript:print ("change triggered");
+print("Submitted Value: " + this.getParent().getSubmittedValue());
+print("Value: " + this.getParent().getValue());}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:comboBox>
+
+				<xp:br></xp:br>
+
+				<xp:label id="label4" for="input3">
+					<xp:this.value><![CDATA[#{javascript:switch (document1.getItemValueString("Country")) {
+	case "BE":
+		return "Postal Code";
+	case "UK":
+		return "PostCode";
+	case "US":
+		return "Zip Code";
+	default:
+		return "PostCode / Postal Code / Zip Code";
+}}]]></xp:this.value>
+				</xp:label>
+
+				<xp:inputText id="input3" value="#{document1.ZIP}"></xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:messages id="messages1"></xp:messages>
+
+				<xp:br></xp:br>
+
+				<xp:button id="button1" value="Save">
+					<xp:this.rendered><![CDATA[#{javascript:if (facesContext.getMessages().hasNext()) {
+	return false;
+} else {
+	if (!document1.getItemValueString("Name")) {
+		return false;
+	} else {
+		return true;
+	}
+}}]]></xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:document1.save();}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:button value="Check Values" id="button2">
+					<xp:this.rendered><![CDATA[#{javascript:if (facesContext.getMessages().hasNext()) {
+	return true;
+} else {
+	if (!document1.getItemValueString("Name")) {
+		return true;
+	} else {
+		return false;
+	}
+}}]]></xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1">
+						<xp:this.action><![CDATA[#{javascript:print ("button clicked");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				
+				<xp:br></xp:br>
+				
+				<xp:text value="#{document1.Name}"></xp:text>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

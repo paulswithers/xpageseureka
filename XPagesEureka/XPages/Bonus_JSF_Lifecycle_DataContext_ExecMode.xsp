@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:print("beforePageLoad");}]]></xp:this.beforePageLoad>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:print("afterPageLoad");}]]></xp:this.afterPageLoad>
+	<xp:this.afterRestoreView><![CDATA[#{javascript:print("afterRestoreView");}]]></xp:this.afterRestoreView>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:print("beforeRenderResponse");}]]></xp:this.beforeRenderResponse>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:print("afterRenderResponse");}]]></xp:this.afterRenderResponse>
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1" style="background-color:rgb(0,128,192);">
+				<xp:this.dataContexts>
+					<xp:dataContext var="showFields">
+						<xp:this.value><![CDATA[#{javascript:print("setting dataContext");
+return true;}]]></xp:this.value>
+					</xp:dataContext>
+				</xp:this.dataContexts>
+				<xp:panel id="panel2" style="background-color:rgb(255,128,64);padding:5px 0;">
+					<xp:text escape="true" id="computedField1">
+						<xp:this.value><![CDATA[#{javascript:print ("Setting value of computed field");
+return @DbTitle();}]]></xp:this.value>
+					</xp:text>
+					<xp:br></xp:br>
+					<xp:inputText id="inputText1" value="#{viewScope.editable}"
+						rendered="#{showFields}">
+					</xp:inputText>
+					<xp:br></xp:br>
+					<xp:button value="Partially refresh internal panel" id="button1">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="panel2">
+						</xp:eventHandler>
+					</xp:button>
+					<xp:button value="Partially refresh with execMode" id="button2">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="panel2" execMode="partial" execId="panel2">
+						</xp:eventHandler>
+					</xp:button>
+				</xp:panel>
+				<xp:text value="This field is outside the partial execution area">
+				</xp:text>
+				<xp:inputText id="inputText2" value="#{viewScope.editable}"
+					rendered="#{showFields}">
+				</xp:inputText>
+				<xp:panel>
+					<xp:this.dataContexts>
+						<xp:dataContext var="tmpFields">
+							<xp:this.value><![CDATA[#{javascript:print("OUTSIDE OF EXEC ID");
+return true;}]]></xp:this.value>
+						</xp:dataContext>
+					</xp:this.dataContexts>
+				</xp:panel>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

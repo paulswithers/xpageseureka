@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:dojoModule name="extlib.dijit.Loading"></xp:dojoModule>
+	</xp:this.resources>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" style="text-align:center" id="panel1">
+				<xp:text escape="true" id="computedField1"
+					value="And the winner is..." tagName="h1">
+				</xp:text>
+				<xp:br></xp:br>
+				<div id="loading"></div>
+				<xp:text escape="true" id="computedField2"
+					value="#{viewScope.firstName} #{viewScope.lastName}">
+				</xp:text>
+				<xp:br></xp:br>
+				<xp:text escape="true" id="computedField3"
+					value="#{viewScope.city}">
+				</xp:text>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:button id="button1" value="Roll the dice...">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="panel1">
+						<xp:this.action><![CDATA[#{javascript:var d = new extlib.DataInitializer();
+d.createUserLottery();}]]></xp:this.action>
+						<xp:this.script><![CDATA[XSP.animateLoading('loading')]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:print("beforePageLoad");}]]></xp:this.beforePageLoad>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:print("afterPageLoad");}]]></xp:this.afterPageLoad>
+	<xp:this.afterRestoreView><![CDATA[#{javascript:print("afterRestoreView");}]]></xp:this.afterRestoreView>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:print("beforeRenderResponse");}]]></xp:this.beforeRenderResponse>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:print("afterRenderResponse");}]]></xp:this.afterRenderResponse>
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[The Computed Field has a value computed on page 
+load but with a themeId. The value will be the DbTitle. Because the SSJS is "Compute On Page Load" 
+the value is calculated between the beforePageLoad and afterPageLoad XPage events. 
+By the time the Render Response JSF phase runs, the variable is just static text, so the theme 
+is not referenced.
+<br/><br/>Compare with JSF_005fLifecycle_005fLanguage_005fTheme Java Class.
+Instead of evaluator.getBindingValue() and evaluator.setValue(), runtime binding
+calls evaluator.createValueBinding() and evaluator.setValueBinding()]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+				
+				<xp:text escape="true" id="computedField1" themeId="Text.Override">
+					<xp:this.value><![CDATA[${javascript:print ("Setting value");
+return @DbTitle();}]]></xp:this.value>
+				</xp:text>
+				
+				<xp:button value="Partially refresh" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1">
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

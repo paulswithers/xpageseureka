@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" styleClass="lotusInfoBox">
+				<div>
+					<span>
+						This web page shows very little!
+						Open the Java Class that relates to
+						this XPage
+						<br></br>
+						(Local\xsp\Bonus_005fHTML_005fvs_005fXSP).
+						createBr creates an
+						instance of the UIPassThroughTag() class and calls the setTag
+						method.
+						createBr2 creates an instance of the XspLineBreak class.
+					</span>
+				</div>
+
+				<xp:text escape="false" tagName="div">
+					<xp:this.value><![CDATA[This web page shows very little!
+	Open the Java Class that relates to this XPage <br/>(Local\xsp\Bonus_005fHTML_005fvs_005fXSP).
+	createBr creates an instance of the UIPassThroughTag() class and calls the setTag method.
+	createBr2 creates an instance of the XspLineBreak class.]]></xp:this.value>
+				</xp:text>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

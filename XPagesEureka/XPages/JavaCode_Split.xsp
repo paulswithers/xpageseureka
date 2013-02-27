@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<!-- Multiple Computed Field controls, all using either static text or EL. Look at the Java
+	class for this XPage in the Package Explorer view, at Local\xsp\JavaCode_005fSplit. The class
+	is much longer than the Merge Java class, creates more XspOutputText controls. Not only is
+	the outputted HTML bigger, the server takes longer calling each of the Java methods. -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+	
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+				xp:key="facet_1" value="#{view1}">
+				<xp:text value="Entry number "></xp:text>
+				<xp:text value="#{count}"></xp:text>
+				<xp:text value=" is "></xp:text>
+				<xp:text value="#{user.FirstName}"></xp:text>
+				<xp:text value="&amp;nbsp;" escape="false"></xp:text>
+				<xp:text value="#{user.LastName}"></xp:text>
+				<xp:text value=" whose email address is "></xp:text>
+				<xp:text value="#{user.EMail}"></xp:text>
+				<xp:text value=" and he/she lives in "></xp:text>
+				<xp:text value="#{user.City}"></xp:text>
+				<xp:text value=", "></xp:text>
+				<xp:text value="#{user.State}"></xp:text>
+				<br />
+			</xp:repeat>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

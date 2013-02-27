@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- One Computed Field control using EL to get all columns from the view and join with
+	static text. Look at the Java class for this XPage in the Package Explorer view, at 
+	Local\xsp\JavaCode_005fMerge. The Java class is shorter than the Split Java class, runs less
+	Java code, calls fewer methods, creates a single XspOutputText object with all code.
+	Not surprisingly, it performs better -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+				xp:key="facet_1" value="#{view1}">
+				<xp:text><xp:this.value><![CDATA[Entry number #{count} is #{user.FirstName} #{user.LastName} 
+				whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}]]></xp:this.value></xp:text>
+				<br />
+			</xp:repeat>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

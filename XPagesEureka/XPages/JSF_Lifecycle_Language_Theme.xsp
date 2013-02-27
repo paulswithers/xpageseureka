@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:print("beforePageLoad");}]]></xp:this.beforePageLoad>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:print("afterPageLoad");}]]></xp:this.afterPageLoad>
+	<xp:this.afterRestoreView><![CDATA[#{javascript:print("afterRestoreView");}]]></xp:this.afterRestoreView>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:print("beforeRenderResponse");}]]></xp:this.beforeRenderResponse>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:print("afterRenderResponse");}]]></xp:this.afterRenderResponse>
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[The Computed Field has a value property computed 
+dynamically. The Edit Box controls have a rendered property computed dynamically. All three 
+controls have themeIds.
+<br/>1. Load the page. Review the phases processed on the server console. Refresh the page. 
+Review the phases processed on the server console and the values printed.
+<br/>The values are set during the Render Response XPage event and are recalculated during the 
+partial refresh a number of times through all except the Invoke Application phase. However, the 
+the property calculations on the XPage are ignored in preference for the settings in the theme.
+There is no performance hit from using themes, but no performance benefit.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+				
+				<xp:text escape="true" id="computedField1" themeId="Text.Override">
+					<xp:this.value><![CDATA[#{javascript:print ("Setting value");
+return @DbTitle();}]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+				
+				<xp:inputText id="inputText1" value="#{viewScope.editable}" themeId="Input.Editable">
+				</xp:inputText>
+				
+				<xp:br></xp:br>
+				
+				<xp:inputText id="inputText2" value="#{viewScope.editable}" themeId="Input.Editable">
+				</xp:inputText>
+				
+				<xp:br></xp:br>
+				
+				<xp:button value="Partially refresh" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1">
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

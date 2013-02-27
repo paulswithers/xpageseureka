@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[1. Create a copy of this database and open this page in both.
+Both databases should have Anonymous access set to No Access, so you are logged in.
+<br/>2. Click the button below on one database to set the sessionScope variable.
+<br/>3. Refresh the sessionScope XPage in the other database. Use the toolbar to view the sessionScope
+variable. Note, that sessionScope is per NSF.
+<br/>4. Click the button to set the sessionScope variable in both databases.
+<br/>5. Click the <b>Simple Logout</b> button. From the design you will see that it logs the user
+out of the Domino session, forcing authentication again. Return to this URL and log in.
+After authentication, the sessionScope variable is still set.
+<br/>6. Click the <b>Clear sessionScope & logout</b> button. From the design you will see that it
+clears the sessionScope variables and then logs the user out of the Domino session. 
+Return to this URL and log in. Note that the sessionScope variable is cleared.
+<br/>7. Refresh this page in the copy of the database. Note that the sessionScope variable in the
+different NSF has not been cleared.	]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+				<!-- Button to set sessionScope variable -->
+				<xp:button value="Set sessionScope for #{database.title}"
+					id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:sessionScope.put("currentLUG","UKLUG");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:br></xp:br>
+				<xp:image url="/SessionScope+and+Logout.jpg" id="image1" style="float:right"></xp:image>
+				<xp:button value="Simple Logout" id="link1"
+					style="background:rgb(64,0,128);color:white !important;margin-top:30px;width:190px;">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:facesContext.getExternalContext().redirect("./?logout");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:br></xp:br>
+				<xp:button value="Clear sessionScope &amp; Logout" id="link2"
+					style="background:rgb(0,0,128);color:white !important;margin-top:195px;width:190px;">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:clearMap(sessionScope);
+facesContext.getExternalContext().redirect("./?logout");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:br></xp:br>
+				<xp:button value="Clear Server Session &amp; Logout" id="button2"
+					style="background:rgb(0,0,128);color:white !important">
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[document.cookie="SessionID=; path=/";
+location.href="./?logout";]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

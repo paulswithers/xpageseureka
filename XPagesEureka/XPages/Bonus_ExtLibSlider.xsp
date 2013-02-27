@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<xe:djHorizontalSlider style="margin-left:5px;width:200px;height:20px"
+					id="djHorizontalSlider1" discreteValues="11" minimum="0" maximum="100"
+					showButtons="false" value="#{viewScope.slider}" defaultValue="50">
+					<xe:this.converter>
+						<xp:convertNumber integerOnly="true"></xp:convertNumber>
+					</xe:this.converter>
+					<xe:djSliderRuleLabels style="height:10px;font-size:75%;color:gray"
+						count="6" container="bottomDecoration" id="djSliderRuleLabels1">
+					</xe:djSliderRuleLabels>
+					<xe:djSliderRule style="height:5px" count="6"
+						container="bottomDecoration" id="djSliderRule1">
+					</xe:djSliderRule>
+				</xe:djHorizontalSlider>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

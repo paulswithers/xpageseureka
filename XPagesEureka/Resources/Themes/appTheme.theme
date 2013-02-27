@@ -1,0 +1,64 @@
+<!--
+	The default theme contents use theme inheritance.
+
+	Application themes can extend an existing global theme using the
+	extends attribute.  Existing themes include the following options:
+
+	1. webstandard 2. oneui 3. notes
+-->
+<theme extends="oneuiv2.1_orange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	<!-- 
+		Use this pattern to include resources (such as style sheets
+		and JavaScript files that are used by this theme.
+	-->
+	<!--
+	<resource>
+		<content-type>text/css</content-type>
+		<href>mystylesheet.css</href>
+	</resource>
+	-->
+
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<control>
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>Eureka!</value>
+		</property>
+		<property>
+			<name>pageIcon</name>
+			<value>favicon1.png</value>
+		</property>
+	</control>
+	
+	<control>
+		<name>Text.Override</name>
+		<property mode="override">
+			<name>value</name>
+			<value>#{javascript:print("overriding value");return "Overridden as " + @DbTitle()}</value>
+		</property>
+		<property>
+			<name>style</name>
+			<value>color:red</value>
+		</property>
+	</control>
+	
+	<control>
+		<name>Input.Editable</name>
+		<property mode="override">
+			<name>rendered</name>
+			<value>#{javascript:print ("editable field rendered");return true;}</value>
+		</property>
+	</control>
+	
+	<control>
+		<name>RepeatText.value</name>
+		<property mode="override">
+			<name>value</name>
+			<value>Entry number #{count} is #{user.FirstName} #{user.LastName} 
+				whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}</value>
+		</property>
+	</control>
+</theme>

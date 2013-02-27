@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- SSJS library of functions. extlib.dijit.OneUINavigator is required for latest
+	Extension Library (3 April 2012) because of regression bug -->
+	<xp:this.resources>
+		<xp:script src="/appFunctions.jss" clientSide="false"></xp:script>
+		<xp:dojoModule name="extlib.dijit.OneUINavigator"></xp:dojoModule>
+		<xp:dojoModule name="dojo.fx"></xp:dojoModule>
+	</xp:this.resources>
+
+	<!-- Mark Leusink's debug toolbar -->
+	<xc:ccDebugToolbar load="true" defaultHidden="false"></xc:ccDebugToolbar>
+
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:this.facets>
+			<xc:navigation xp:key="LeftColumn"></xc:navigation>
+		</xp:this.facets>
+		<xp:callback facetName="facet_1" id="callback1"></xp:callback>
+		<xe:this.configuration>
+			<!-- database.title is Expression Language for SSJS database.getTitle() -->
+			<xe:oneuiApplication banner="false" placeBar="false" legal="false"
+				footer="false" titleBarName="#{database.title}">
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
+</xp:view>

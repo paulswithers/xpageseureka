@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:dojoModule name="extlib.dijit.Loading"></xp:dojoModule>
+	</xp:this.resources>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:div xp:key="facet_1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[The following pages build on the Java Performance
+pages. All pages use a single Computed Field control for each row in the repeat to render the content.
+<br/>The difference between the pages is that the Computed Field has a rendered property. Each 
+page calculates that rendered property in a different way:
+<ol><li>SSJS in the control</li>
+<li>SSJS in a Script Library</li>
+<li>Java referenced via EL</li>
+<li>Java referenced via SSJS</li>
+<li>SSJS in a dataContext referenced via EL</li>
+<li>A VariableResolver referenced via EL</li></ol>
+<br/>Compare performance. There are notes in the design of each page that elaborate on each.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+			</xp:div>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

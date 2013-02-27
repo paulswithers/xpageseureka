@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- The rendered property is calculated using a VariableResolver. You can find the code in
+	WebContent/WEB-INF/src in com.lugs.jsf package Example VariableResolver class. The VariableResolver
+	is loaded in the faces-config.xml
+	
+	A VariableResolver is a way to reference a variable and return a value. The variable is a string, 
+	but is referenced via EL. It's sort of like a dataContext scoped to the application.
+	
+	The VariableResolver declares a variable called showRow, which returns true. -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:button value="Partially refresh #{showRowServer}" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1">
+					</xp:eventHandler>
+				</xp:button>
+				<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+					value="#{view1}">
+					<xp:text
+						value="Entry number #{count} is #{user.FirstName} #{user.LastName} 
+						whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}"
+						rendered="#{showRowServer}">
+					</xp:text>
+					<br />
+				</xp:repeat>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

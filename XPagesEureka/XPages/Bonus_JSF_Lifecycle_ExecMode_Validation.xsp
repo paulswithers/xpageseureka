@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+
+				<xp:this.data>
+					<xp:dominoDocument var="document1" formName="sampleData"></xp:dominoDocument>
+				</xp:this.data>
+
+				<xp:div styleClass="lotusInfoBox">
+				<xp:text escape="false">
+						<xp:this.value><![CDATA[1. Select an option from the comboBox, the label updates.
+<br/>2. Enter values in other fields and select an option from the comboBox. The label updates but values
+entered into other fields are lost.<br/><br/>
+The Country comboBox triggers a partial refresh event of panel1 but
+with execMode="partial". This only runs validation for the component(s) within the execId area (by
+default the parent component triggering the partial refresh). However, that's because it only updates the
+server-side component tree for that same area. So values in other fields are not stored, but are
+overwritten by the partial refresh.
+<br/><br/>
+3. Enter a value in the Name field. Enter a value in the Age field. Click the Update button.<br/>
+The Update button also has execMode="partial" but specifies an execId of "input1". This means the
+Name field value gets stored (as evidenced by the Computed Field below the buttons), but the Age 
+field value doesn't. The whole panel is refreshed, so the Age field value reverts to its previous 
+value.<br/><br/>This doesn't show functionality you would use, but does show how NOT to use it.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:label value="Name" id="label1" for="input1"></xp:label>
+
+				<xp:inputText id="input1" value="#{document1.Name}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Enter your name"></xp:validateRequired>
+					</xp:this.validators>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:label value="Age" id="label2" for="input2"></xp:label>
+
+				<xp:inputText id="input2" value="#{document1.Age}">
+					<xp:this.converter>
+						<xp:convertNumber type="number" integerOnly="true"></xp:convertNumber>
+					</xp:this.converter>
+				</xp:inputText>
+
+				<xp:br></xp:br>
+
+				<!--
+					execMode="partial" defaults the execId to the current component. The
+					component tree only gets updated with the change to this component, but
+					anything within the refreshId area that depends on this value will be
+					refreshed for the user.
+				-->
+				<xp:label value="Country" id="label3" for="input2"></xp:label>
+				<xp:comboBox id="combo1" value="#{document1.Country}">
+					<xp:selectItem itemLabel="--Please Select--" itemValue=""></xp:selectItem>
+					<xp:selectItem itemLabel="Belgium" itemValue="BE"></xp:selectItem>
+					<xp:selectItem itemLabel="UK" itemValue="UK"></xp:selectItem>
+					<xp:selectItem itemLabel="USA" itemValue="US"></xp:selectItem>
+					<xp:eventHandler event="onchange" submit="true"
+						refreshMode="partial" refreshId="panel1" execMode="partial">
+						<xp:this.action><![CDATA[#{javascript:print ("change triggered");
+print("Submitted Value: " + this.getParent().getSubmittedValue());
+print("Value: " + this.getParent().getValue());}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:comboBox>
+
+				<xp:br></xp:br>
+
+				<xp:label id="label4" for="input3">
+					<xp:this.value><![CDATA[#{javascript:switch (document1.getItemValueString("Country")) {
+	case "BE":
+		return "Postal Code";
+	case "UK":
+		return "PostCode";
+	case "US":
+		return "Zip Code";
+	default:
+		return "PostCode / Postal Code / Zip Code";
+}}]]></xp:this.value>
+				</xp:label>
+
+				<xp:inputText id="input3" value="#{document1.ZIP}"></xp:inputText>
+
+				<xp:br></xp:br>
+
+				<xp:messages id="messages1"></xp:messages>
+
+				<xp:br></xp:br>
+
+				<xp:button value="Save" id="button1">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:document1.save();}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:button value="Update" id="button2">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="partial"
+						refreshId="panel1" execMode="partial" execId="input1">
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:br></xp:br>
+
+				<xp:text id="text1" value="#{document1.Name}"></xp:text>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

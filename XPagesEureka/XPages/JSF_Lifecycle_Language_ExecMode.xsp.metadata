@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="20a" sequence="41" unid="C7D556AD287F3CC2802579B00072AAAB">
+<created><datetime>20120226T205227,95+00</datetime></created>
+<modified><datetime>20121218T112352,64+00</datetime></modified>
+<revised><datetime>20121218T112352,63+00</datetime></revised>
+<lastaccessed><datetime>20121218T112352,64+00</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120504T122920,79+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
+<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE" sign="true"><text>JSF_Lifecycle_Language_ExecMode.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+<item name="$FileNames" sign="true"><text>JSF_Lifecycle_Language_ExecMode.xsp</text></item>
+
+
+
+
+</note>

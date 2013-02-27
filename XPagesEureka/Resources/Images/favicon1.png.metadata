@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="162" sequence="11" unid="1A536AB2A7F506DE802579AA007BC8AB">
+<created><datetime>20120220T223202,99+00</datetime></created>
+<modified><datetime>20121218T112351,80+00</datetime></modified>
+<revised><datetime>20121218T112351,79+00</datetime></revised>
+<lastaccessed><datetime>20121218T112351,80+00</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120504T122919,95+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
+<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
+<item name="$TITLE"><text>favicon1.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120220T223116,36+00</datetime></item>
+<item name="$ImageNames" sign="true"><text>favicon1.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

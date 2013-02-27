@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- Same as JavaCode_Split XPage, except we add a Computed Field control for "and the UNID is"
+	and another Computed Field control for #{javascript:user.getUniversalID()}".
+	The outputted HTML is much larger - no surprise there given the amount of extra characters. 
+	But the server's processing of the Java class is slower by a greater proportion than just adding
+	another EL call. The conclusion: SSJS calls are slower than EL. The Bonus_JavaCode_Java_EL and 
+	Bonus_JavaCode_Java_Method XPages will reinforce this. -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+	
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+				xp:key="facet_1" value="#{view1}">
+				<xp:text value="Entry number "></xp:text>
+				<xp:text value="#{count}"></xp:text>
+				<xp:text value=" is "></xp:text>
+				<xp:text value="#{user.FirstName}"></xp:text>
+				<xp:text value="&amp;nbsp;" escape="false"></xp:text>
+				<xp:text value="#{user.LastName}"></xp:text>
+				<xp:text value=" whose email address is "></xp:text>
+				<xp:text value="#{user.EMail}"></xp:text>
+				<xp:text value=" and he/she lives in "></xp:text>
+				<xp:text value="#{user.City}"></xp:text>
+				<xp:text value=", "></xp:text>
+				<xp:text value="#{user.State}"></xp:text>
+				<xp:text value=" and the UNID is "></xp:text>
+				<xp:text value="#{javascript:user.getUniversalID()}"></xp:text>
+				<br />
+			</xp:repeat>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

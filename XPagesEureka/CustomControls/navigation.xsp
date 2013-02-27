@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:navigator id="navigator1" expandable="true" expandLevel="0"
+		keepState="true" expandEffect="wipe">
+		<xe:this.treeNodes>
+			<xe:pageTreeNode label="Home" page="/Welcome.xsp"></xe:pageTreeNode>
+
+			<xe:pageTreeNode page="/sessionScope.xsp" label="sessionScope"></xe:pageTreeNode>
+
+			<xe:basicContainerNode label="Language Performance">
+				<xe:this.children>
+					<xe:pageTreeNode label="Text Elements Split"
+						page="/JavaCode_Split.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Text Elements Merged"
+						page="/JavaCode_Merge.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Text Elements Split with SSJS"
+						page="/JavaCode_Split_SSJS.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Text Elements Merged with SSJS"
+						page="/JavaCode_Merge_SSJS.xsp">
+					</xe:pageTreeNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+
+			<xe:pageTreeNode label="Persistence" page="/Persistence.xsp"></xe:pageTreeNode>
+
+			<xe:basicContainerNode label="JSF Lifecycle">
+				<xe:this.children>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Basic.xsp"
+						label="Basic">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_No_Validation.xsp"
+						label="No Validation">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Immediate.xsp"
+						label="Immediate">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Custom_Validator.xsp"
+						label="Custom Validator">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Custom_Validator_Java.xsp"
+						label="Custom Validator Java">
+					</xe:pageTreeNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+
+			<xe:basicContainerNode label="JSF Lifecycle Extended">
+				<xe:this.children>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Language_Loaded.xsp"
+						label="Loaded">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Language_Runtime.xsp"
+						label="Runtime">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Language_Theme.xsp"
+						label="Theme">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/JSF_Lifecycle_Language_DataContext.xsp" label="DataContext">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/JSF_Lifecycle_Language_ExecMode.xsp"
+						label="ExecMode">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/JSF_Lifecycle_Language_DataContext_ExecMode.xsp"
+						label="DataContext ExecMode">
+					</xe:pageTreeNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+
+			<xe:basicContainerNode label="Bonus">
+				<xe:this.children>
+					<xe:pageTreeNode page="/Bonus_HTML_vs_XSP.xsp"
+						label="HTML vs XSP">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Dojo Slider"
+						page="/Bonus_DojoSlider.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Ext Lib Slider"
+						page="/Bonus_ExtLibSlider.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Buttons_Rendered.xsp"
+						label="Check Values / Submit">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_RefreshId.xsp"
+						label="Computed refreshId">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_Theme_Failure.xsp"
+						label="Theme Failing">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_Theme_Repeat.xsp"
+						label="Theme Repeat Failing">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_DataContext_Value.xsp"
+						label="dataContext for Value">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_ExecMode_Validation.xsp" label="execMode">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode page="/Bonus_JavaCode_Performance.xsp"
+						label="Language Performance + Rendered">
+						<xe:this.children>
+							<xe:pageTreeNode page="/Bonus_JavaCode_SSJS.xsp"
+								label="Rendered in SSJS">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode page="/Bonus_JavaCode_SSJS_SL.xsp"
+								label="Rendered in SL">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode page="/Bonus_JavaCode_Java_EL.xsp"
+								label="Rendered in Java EL">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode
+								page="/Bonus_JavaCode_Java_Method.xsp"
+								label="Rendered in Java Method">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode
+								page="/Bonus_JavaCode_DataContext.xsp"
+								label="Rendered in DataContext">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode
+								page="/Bonus_JavaCode_VariableResolver.xsp"
+								label="Rendered in VariableResolver">
+							</xe:pageTreeNode>
+							<xe:pageTreeNode
+								page="/Bonus_JavaCode_ServerVariableResolver.xsp"
+								label="Rendered in Server VariableResolver">
+							</xe:pageTreeNode>
+						</xe:this.children>
+					</xe:pageTreeNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+
+		</xe:this.treeNodes>
+	</xe:navigator>
+</xp:view>

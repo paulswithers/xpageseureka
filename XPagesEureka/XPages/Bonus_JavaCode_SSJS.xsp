@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<!-- The rendered property is calculated using SSJS on the field itself. See spreadsheet
+	with the zip file for performance or compare with other Bonus_JavaCode_XXX pages -->
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="AllContacts"></xp:dominoView>
+	</xp:this.data>
+
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:button value="Partially refresh" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="panel1">
+					</xp:eventHandler>
+				</xp:button>
+				<xp:repeat id="repeat1" rows="50000" indexVar="count" var="user"
+					value="#{view1}">
+					<xp:text
+						value="Entry number #{count} is #{user.FirstName} #{user.LastName} 
+				whose email address is #{user.EMail} and he/she lives in #{user.City}, #{user.State}"
+						rendered="#{javascript:return true;}">
+					</xp:text>
+					<br />
+				</xp:repeat>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>

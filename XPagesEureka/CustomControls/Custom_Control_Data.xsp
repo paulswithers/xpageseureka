@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:text escape="true" id="computedField1">
+		<xp:this.value><![CDATA[#{javascript:compositeData.rowEntry.getColumnValue("FirstName");}]]></xp:this.value>
+	</xp:text>
+	<xp:image id="imgDocLock">
+		<xp:this.url><![CDATA[#{javascript:if (compositeData.rowEntry.getDocument().hasItem("$Writers") != "") {
+    return "/locked.gif";
+}}]]></xp:this.url>
+		<xp:this.alt><![CDATA[#{javascript:"Document locked by " + compositeData.rowEntry.getColumnValue("FirstName");}]]></xp:this.alt>
+		<xp:this.title><![CDATA[#{javascript:"Document locked by " + compositeData.rowEntry.getColumnValue("FirstName");}]]></xp:this.title>
+	</xp:image>
+
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<!--
+		&quot;If you need to set repeatControls=true, please reconsider your design.
+		Odds are that you have calculations inside the repeating contents that depend
+		on calculations other than the currently iterated variable&quot;
+	-->
+</xp:view>

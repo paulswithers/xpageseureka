@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:panel>   <xp:this.dataContexts>
+      <xp:dataContext var="dataContext">
+         <xp:this.value>
+            <![CDATA[#{javascript:
+               // Sleep for 100ms
+               java.lang.Thread.currentThread().sleep( 100 );
+               print('-=> Recalc: ' + java.lang.System.currentTimeMillis());
+               return true;
+            }]]>
+          </xp:this.value>
+       </xp:dataContext>
+    </xp:this.dataContexts>
+
+   <xp:label id="labelRefreshMe">
+      <xp:this.value>
+         <![CDATA[#{javascript:
+            java.lang.System.currentTimeMillis()
+         }]]>
+      </xp:this.value>
+   </xp:label>
+
+   <xp:button value="Refresh" id="buttonRefresh" >
+      <xp:eventHandler event="onclick" submit="false"
+         refreshMode="partial"
+         refreshId="labelRefreshMe"
+         execId="labelRefreshMe"
+         execMode="partial" />
+   </xp:button>
+   </xp:panel>
+</xp:view>

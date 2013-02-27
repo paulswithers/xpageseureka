@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:print("beforePageLoad");}]]></xp:this.beforePageLoad>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:print("afterPageLoad");}]]></xp:this.afterPageLoad>
+	<xp:this.afterRestoreView><![CDATA[#{javascript:print("afterRestoreView");}]]></xp:this.afterRestoreView>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:print("beforeRenderResponse");}]]></xp:this.beforeRenderResponse>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:print("afterRenderResponse");}]]></xp:this.afterRenderResponse>
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[The Computed Field has a value property computed 
+on page load.
+<br/>1. Load the page. Review the phases processed on the server console. Refresh the page. 
+Review the phases processed on the server console and the values printed.
+<br/>The refreshId is also calculated via SSJS, but only calculated during the Render Response phase.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:text escape="true" id="computedField1">
+					<xp:this.value><![CDATA[${javascript:print ("Setting value of computed field");
+return @DbTitle();}]]></xp:this.value>
+				</xp:text>
+
+				<xp:br></xp:br>
+
+				<xp:button value="Partially refresh" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial">
+						<xp:this.refreshId><![CDATA[#{javascript:print ("Getting refreshId");
+if (session.getUserName()=="Anonymous") {
+	return "panel1";
+} else {
+	return "panel1";
+}}]]></xp:this.refreshId>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>
