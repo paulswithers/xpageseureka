@@ -13,9 +13,16 @@
 	<!-- Mark Leusink's debug toolbar -->
 	<xc:ccDebugToolbar load="true" defaultHidden="false"></xc:ccDebugToolbar>
 
+
 	<xe:applicationLayout id="applicationLayout1">
 		<xp:this.facets>
 			<xc:navigation xp:key="LeftColumn"></xc:navigation>
+			<xp:div xp:key="SearchBar"
+				style="color:rgb(255,255,255);padding-top:5px">
+				<xp:text escape="true" id="computedField1"
+					style="font-weight:bold" value="#{currMonth}">
+				</xp:text>
+			</xp:div>
 		</xp:this.facets>
 		<xp:callback facetName="facet_1" id="callback1"></xp:callback>
 		<xe:this.configuration>
