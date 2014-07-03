@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:text escape="true" id="computedField1">
+					<xp:this.value><![CDATA[${sampleBean.type} - ${sampleBean.rowRendered} (${sampleBean})]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+
+				<xp:text escape="true" id="computedField2">
+					<xp:this.value><![CDATA[${compositeData.dataObject.type} - ${compositeData.dataObject.rowRendered} (${compositeData.dataObject})]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+
+				<xp:text escape="true" id="computedField3">
+					<xp:this.value><![CDATA[${sampleBeanInstance.type} - ${sampleBeanInstance.rowRendered} (${sampleBeanInstance})]]></xp:this.value>
+				</xp:text>
+</xp:view>

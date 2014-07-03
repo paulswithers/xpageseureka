@@ -11,10 +11,6 @@
 				<xp:image url="intec-logo-medium1.gif" id="image1"
 					style="float:left">
 				</xp:image>
-				<xp:image url="/uklug.gif" id="image3"></xp:image>
-				<xp:image url="/gbs-Logo-2.gif" id="image2" loaded="false"
-					style="float:right">
-				</xp:image>
 				<!-- Title -->
 				<xp:text escape="true" id="computedField1"
 					value="Welcome" tagName="h1"

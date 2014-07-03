@@ -52,7 +52,7 @@ is updated.]]>
 
 				<xp:comboBox id="combo1" value="#{document1.Country}">
 					<xp:selectItem itemLabel="--Please Select--" itemValue=""></xp:selectItem>
-					<xp:selectItem itemLabel="Denmark" itemValue="DK"></xp:selectItem>
+					<xp:selectItem itemLabel="Norway" itemValue="NO"></xp:selectItem>
 					<xp:selectItem itemLabel="UK" itemValue="UK"></xp:selectItem>
 					<xp:selectItem itemLabel="USA" itemValue="US"></xp:selectItem>
 					<xp:eventHandler event="onchange" submit="true" refreshMode="partial"
@@ -67,7 +67,7 @@ print("Value: " + this.getParent().getValue());}]]></xp:this.action>
 
 				<xp:label id="label4" for="input3">
 					<xp:this.value><![CDATA[#{javascript:switch (document1.getItemValueString("Country")) {
-	case "DK":
+	case "NO":
 		return "Postal Code";
 	case "UK":
 		return "PostCode";

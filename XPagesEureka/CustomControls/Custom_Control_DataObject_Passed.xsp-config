@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>Custom_Control_DataObject_Passed</component-type>
+    <composite-name>Custom_Control_DataObject_Passed</composite-name>
+    <composite-file>/Custom_Control_DataObject_Passed.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>dataObject</property-name>
+      <property-class>java.lang.Object</property-class>
+    </property>
+  </composite-component>
+</faces-config>

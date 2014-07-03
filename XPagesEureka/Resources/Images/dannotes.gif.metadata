@@ -1,20 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="25e" sequence="8" unid="5AF60462FC9C262A802579F300291A61">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.1" name="dannotes.gif" publicaccess="false" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25e" sequence="16" unid="5AF60462FC9C262A802579F300291A61">
 <created><datetime dst="true">20120503T082857,29+01</datetime></created>
-<modified><datetime>20121218T112353,04+00</datetime></modified>
-<revised><datetime>20121218T112353,03+00</datetime></revised>
-<lastaccessed><datetime>20121218T112353,04+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120504T122921,21+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
-<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
-<item name="$TITLE"><text>dannotes.gif</text></item>
-<item name="$Flags"><text>34CiQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<modified><datetime dst="true">20130605T122307,40+01</datetime></modified>
+<revised><datetime dst="true">20130605T122307,39+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130605T122307,40+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130408T092352,36+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$FileModDT" sign="true"><datetime dst="true">20120503T082841,36+01</datetime></item>
-<item name="$ImageNames" sign="true"><text>dannotes.gif</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-</note>
+</imageresource>

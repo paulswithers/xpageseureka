@@ -1,21 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2ca" sequence="2" unid="182C3378EEDDF87880257A690072F60B">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.1" name="gbs-Logo-2.gif" publicaccess="false" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2ca" sequence="10" unid="182C3378EEDDF87880257A690072F60B">
 <created><datetime dst="true">20120829T215540,91+01</datetime></created>
-<modified><datetime>20121218T112353,10+00</datetime></modified>
-<revised><datetime>20121218T112353,09+00</datetime></revised>
-<lastaccessed><datetime>20121218T112353,10+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120829T215540,93+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
-<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
-<item name="$TITLE"><text>gbs-Logo-2.gif</text></item>
-<item name="$Flags"><text>34CiQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
-
-
-<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<modified><datetime dst="true">20130605T122307,28+01</datetime></modified>
+<revised><datetime dst="true">20130605T122307,27+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130605T122307,28+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130408T092352,20+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$FileModDT" sign="true"><datetime dst="true">20120829T215505,14+01</datetime></item>
-<item name="$ImageNames" sign="true"><text>gbs-Logo-2.gif</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+</imageresource>

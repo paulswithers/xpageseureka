@@ -1,20 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="162" sequence="11" unid="1A536AB2A7F506DE802579AA007BC8AB">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.1" name="favicon1.png" publicaccess="false" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="162" sequence="19" unid="1A536AB2A7F506DE802579AA007BC8AB">
 <created><datetime>20120220T223202,99+00</datetime></created>
-<modified><datetime>20121218T112351,80+00</datetime></modified>
-<revised><datetime>20121218T112351,79+00</datetime></revised>
-<lastaccessed><datetime>20121218T112351,80+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120504T122919,95+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
-<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
-<item name="$TITLE"><text>favicon1.png</text></item>
-<item name="$Flags"><text>34CiQ</text></item>
-<item name="$FlagsExt"><text>D</text></item>
-<item name="$ImagesWide" sign="true"><number>1</number></item>
-<item name="$ImagesHigh" sign="true"><number>1</number></item>
-<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<modified><datetime dst="true">20130605T122307,34+01</datetime></modified>
+<revised><datetime dst="true">20130605T122307,33+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130605T122307,34+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130408T092352,28+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby><jpeg>
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAw5pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0
+MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv
+IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS
+ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD
+cmVhdG9yVG9vbD0iSXJmYW5WaWV3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAzNzRGQkFC
+QTdBQjExRTA5QzY0REM0MjY3MUIzOEYzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAzNzRG
+QkFDQTdBQjExRTA5QzY0REM0MjY3MUIzOEYzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmlu
+c3RhbmNlSUQ9InhtcC5paWQ6MDM3NEZCQTlBN0FCMTFFMDlDNjREQzQyNjcxQjM4RjMiIHN0UmVm
+OmRvY3VtZW50SUQ9InhtcC5kaWQ6MDM3NEZCQUFBN0FCMTFFMDlDNjREQzQyNjcxQjM4RjMiLz4g
+PC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9
+InIiPz7IVyGNAAADMElEQVR42oxTe2xLURy+596299F2bbfW1rUU3bJlbBZdDJlZZIbEEDGmXmXz
+iBEhMkFEQkKCINgfIsTbsk0MK/8YUc9lK6bYZp2NlrWjanfV294nVzJZqMT3zznfOd/vO49fPtAi
+lUJDkcMwv0b7/IVa8B1dQbndNv2EMbtkdefqoRiAYy2Wmc327dev+l9+fdulzDDv6XM0VTHLy4j/
+NqDDYXWI50GcDCaKbl6shTCC/Nrj2xhLC8QnoOWb8vztPeuoEKWUyOUeRI528Ejk2swbtV5R1FBQ
+ciDi/TBtZGFuYSTM4JAg8Fj1af8vA+eazVmfW1qrWEz27ucGiAbJFJgcMAmwhBXida74VONZSACg
+/8nT4wn5uVaGB2GB5TQ8w5p0Bq0TNK+qsNCRaDJae+7m4LX6Zy+eDtGRTNLjnwX7fdkcoQ7AFKk2
+BtxJgxqkfFO23+k6BMcnqp4TBM4QG7coZKvXJzILbcWRKK8l9ElHh7c9nj6suMCM6DTNKtKn82YV
+1AwaUJ3ufQiO9AKROBYtNgJaUorI8e4eP3MPRQSlqfHS+6Gf1ZOY2cWGBwhlsv6jxqjzkJ8+jhw9
+a8okuNJiWVdcU+2peXRnKQQJb1iaU/EQ+Ks7ggSh0DEZVYpedxbjaJxjmDpxHnn4aAQ2yTBFOoA5
+lSbOOfniqTazEdMrYHr80GK2ZO0SNek3ox86K6CpU8ooS/7lbvuDuwnbKiXgwVzb/kDgCz3vYcNu
+USy2NVhUWoFw7ChuIJTOfenL4DgWAv1BrawwL6nwyvmwqLuRkttBpI44I1Eb1HXB12+q643jygAC
+cz5IQKBnzRgvlwcElfIVako+gWOKYOh56x4VLJHuzMk52NTebqXluEvKsIQkeqrKmQxBqaEF1uxo
+mNJgOPqNDvMGbFulHS/IEcTTQkWLjvBSOCqV4plvO7ts90MhrRXjGiyTMveCP8MkIlKyMo0XBB1R
+d/ahyINj81opJWaf47i9w2Fdpn/qejG50uW6+s8sYCqim/1OpYvzuA1b87mAT59gNhwWef7lC72D
+xb+zEAvS8oos72uvTejzzFCkjTipuFV/LJbuhwADAAmcWMINB2lYAAAAAElFTkSuQmCC
+</jpeg>
 <item name="$FileModDT" sign="true"><datetime>20120220T223116,36+00</datetime></item>
-<item name="$ImageNames" sign="true"><text>favicon1.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-</note>
+</imageresource>

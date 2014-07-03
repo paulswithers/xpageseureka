@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="18e" sequence="145" unid="8A8EDCB74B175BA5802579AE007BC072">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="802579F4003F1A36" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18e" sequence="161" unid="8A8EDCB74B175BA5802579AE007BC072">
 <created><datetime>20120224T223141,94+00</datetime></created>
-<modified><datetime>20121218T112352,02+00</datetime></modified>
-<revised><datetime>20121218T112352,01+00</datetime></revised>
-<lastaccessed><datetime>20121218T112352,02+00</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20120504T122920,17+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=admin/O=Intec-PW</name></updatedby>
-<wassignedby><name>CN=admin/O=Intec-PW</name></wassignedby>
+<modified><datetime dst="true">20130605T122333,87+01</datetime></modified>
+<revised><datetime dst="true">20130605T122333,86+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130605T122333,87+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130408T092337,17+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>JavaCode_Split.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 <item name="$FileNames" sign="true"><text>JavaCode_Split.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 

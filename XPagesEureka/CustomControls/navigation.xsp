@@ -98,8 +98,16 @@
 						label="Theme Repeat Failing">
 					</xe:pageTreeNode>
 					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_Loaded_Rendered.xsp"
+						label="Loaded and Rendered">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
 						page="/Bonus_JSF_Lifecycle_Language_DataContext_Value.xsp"
 						label="dataContext for Value">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode
+						page="/Bonus_JSF_Lifecycle_Language_DataContext_XPage.xsp"
+						label="dataContext Bound to XPage">
 					</xe:pageTreeNode>
 					<xe:pageTreeNode
 						page="/Bonus_JSF_Lifecycle_ExecMode_Validation.xsp" label="execMode">

@@ -28,7 +28,7 @@ different NSF has not been cleared.	]]>
 					id="button1">
 					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:sessionScope.put("currentLUG","UKLUG");}]]></xp:this.action>
+						<xp:this.action><![CDATA[#{javascript:sessionScope.put("currentLUG","IBM samhandling brukergruppe");}]]></xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
 				<xp:br></xp:br>

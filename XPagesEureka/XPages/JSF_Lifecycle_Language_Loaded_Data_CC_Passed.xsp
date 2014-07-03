@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:print("beforePageLoad");}]]></xp:this.beforePageLoad>
+	<xp:this.afterPageLoad><![CDATA[#{javascript:print("afterPageLoad");}]]></xp:this.afterPageLoad>
+	<xp:this.afterRestoreView><![CDATA[#{javascript:print("afterRestoreView");}]]></xp:this.afterRestoreView>
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:print("beforeRenderResponse");}]]></xp:this.beforeRenderResponse>
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:print("afterRenderResponse");}]]></xp:this.afterRenderResponse>
+	<xc:appLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1" id="panel1">
+				<xp:this.data>
+					<xe:objectData var="sampleObject">
+						<xe:this.createObject><![CDATA[#{javascript:importPackage(com.lugs.jsf);
+return new SampleBean("dataObject");}]]></xe:this.createObject>
+					</xe:objectData>
+				</xp:this.data>
+				<xp:div styleClass="lotusInfoBox">
+					<xp:text escape="false">
+						<xp:this.value><![CDATA[The Computed Field has a value property computed 
+on page load. The Edit Box controls have a rendered property computed on page load.
+<br/>1. Load the page. Review the phases processed on the server console. Refresh the page. 
+Review the phases processed on the server console and the values printed.
+<br/>The values are set during the Page Load XPage event and are not recalculated during the 
+partial refresh.]]>
+						</xp:this.value>
+					</xp:text>
+				</xp:div>
+
+				<xp:text escape="true" id="computedField1">
+					<xp:this.value><![CDATA[#{sampleBean.type} - #{sampleBean.rowRendered} (#{sampleBean})]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+
+				<xp:text escape="true" id="computedField2">
+					<xp:this.value><![CDATA[#{sampleObject.type} - #{sampleObject.rowRendered} (#{sampleObject})]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+
+				<xp:text escape="true" id="computedField3">
+					<xp:this.value><![CDATA[#{sampleBeanInstance.type} - #{sampleBeanInstance.rowRendered} (#{sampleBeanInstance})]]></xp:this.value>
+				</xp:text>
+				
+				<xp:br></xp:br>
+				<b>Custom Control</b>
+				<xp:br></xp:br>
+				<xc:Custom_Control_DataObject_Passed
+					dataObject="#{javascript:sampleObject}">
+
+				</xc:Custom_Control_DataObject_Passed>
+
+			</xp:panel>
+		</xp:this.facets>
+	</xc:appLayout>
+</xp:view>
